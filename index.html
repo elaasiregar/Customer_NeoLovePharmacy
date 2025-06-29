@@ -1,0 +1,1025 @@
+<html class="scroll-smooth" lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>
+    Neo Love Pharmacy
+  </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-b from-indigo-50 via-white to-indigo-50 min-h-screen flex flex-col">
+  <div class="flex-grow flex flex-col" id="app">
+    <!-- Halaman 1: Landing Page -->
+    <section
+      class="flex flex-col items-center justify-center min-h-screen px-6 text-center bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 text-white"
+      id="landing">
+      <h1 class="text-5xl font-extrabold mb-6 drop-shadow-lg">
+        Neo Love Pharmacy
+      </h1>
+      <p class="text-xl max-w-xl mb-10 drop-shadow-md">
+        Selamat datang di Neo Love Pharmacy, tempat terbaik untuk kebutuhan obat dan kesehatan Anda.
+      </p>
+      <img
+        alt="Toko obat modern dengan rak-rak obat lengkap dan suasana bersih dan terang, interior apotek yang rapi dan profesional"
+        class="rounded-lg shadow-lg mb-10 max-w-full w-[600px] h-auto object-cover" height="400"
+        src="https://storage.googleapis.com/a1aa/image/b1fb5987-469f-4eb7-6d01-9826e572dc34.jpg" width="600" />
+      <button
+        class="bg-white text-indigo-600 font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-indigo-100 transition"
+        id="btnShopNow">
+        Belanja Sekarang
+      </button>
+    </section>
+    <!-- Halaman 2: Dashboard -->
+    <section class="hidden flex flex-col min-h-screen bg-indigo-50" id="dashboard">
+      <!-- Navbar -->
+      <nav class="bg-indigo-600 text-white flex items-center justify-between px-6 py-4 shadow-md sticky top-0 z-30">
+        <h2 class="text-2xl font-bold">
+          Neo Love Pharmacy
+        </h2>
+        <ul class="flex space-x-6 text-lg font-semibold">
+          <li>
+            <button aria-label="Beranda" class="hover:text-indigo-300 focus:outline-none focus:text-indigo-300"
+              id="navHome">
+              <i class="fas fa-home">
+              </i>
+              Beranda
+            </button>
+          </li>
+          <li>
+            <button aria-label="Obat-obatan" class="hover:text-indigo-300 focus:outline-none focus:text-indigo-300"
+              id="navMedicines">
+              <i class="fas fa-pills">
+              </i>
+              Obat-obatan
+            </button>
+          </li>
+          <li>
+            <button aria-label="Kontak Saya" class="hover:text-indigo-300 focus:outline-none focus:text-indigo-300"
+              id="navContact">
+              <i class="fas fa-address-book">
+              </i>
+              Kontak Saya
+            </button>
+          </li>
+          <li>
+            <button aria-label="Keranjang Belanja"
+              class="relative hover:text-indigo-300 focus:outline-none focus:text-indigo-300" id="navCart">
+              <i class="fas fa-shopping-cart text-xl">
+              </i>
+              <span
+                class="absolute -top-2 -right-3 bg-pink-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold"
+                id="cartCount">
+                0
+              </span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <!-- Konten Dashboard -->
+      <main class="flex-grow p-6 max-w-7xl mx-auto w-full">
+        <!-- Beranda -->
+        <section class="space-y-6" id="pageHome">
+          <h3 class="text-3xl font-bold text-indigo-700 mb-4">
+            Selamat Datang di Neo Love Pharmacy
+          </h3>
+          <p class="text-indigo-900 max-w-3xl">
+            Kami menyediakan berbagai macam obat-obatan berkualitas dengan harga terbaik. Silakan pilih menu Obat-obatan
+            untuk melihat produk kami, atau hubungi kami melalui Kontak Saya.
+          </p>
+          <img
+            alt="Interior apotek modern dengan rak obat lengkap, pencahayaan terang, dan suasana bersih dan profesional"
+            class="rounded-lg shadow-lg w-full max-w-4xl object-cover" height="400"
+            src="https://storage.googleapis.com/a1aa/image/5d476ab1-a849-44dd-2b5b-965f4fc88a65.jpg" width="800" />
+        </section>
+        <!-- Obat-obatan -->
+        <section class="hidden" id="pageMedicines">
+          <h3 class="text-3xl font-bold text-indigo-700 mb-6">
+            Daftar Obat-obatan
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="medicinesList">
+            <!-- Obat 1 -->
+            <article class="bg-white rounded-lg shadow-md p-4 flex flex-col" data-id="1">
+              <img alt="Obat Paracetamol dalam kemasan tablet, warna putih, untuk pereda nyeri dan demam"
+                class="rounded-md mb-4 object-cover w-full h-40" height="200"
+                src="https://storage.googleapis.com/a1aa/image/6293930c-d9c3-4b2b-ef2a-2de6ab51e0f1.jpg" width="300" />
+              <h4 class="font-semibold text-lg text-indigo-800 mb-1">
+                Paracetamol
+              </h4>
+              <p class="text-indigo-700 mb-3 text-sm">
+                Obat pereda nyeri dan demam yang aman dan efektif.
+              </p>
+              <div class="mt-auto flex space-x-3">
+                <button class="flex-1 bg-indigo-600 text-white rounded-md py-2 hover:bg-indigo-700 transition"
+                  data-action="orderNow">
+                  Pesan Sekarang
+                </button>
+                <button
+                  class="flex-1 border border-indigo-600 text-indigo-600 rounded-md py-2 hover:bg-indigo-100 transition"
+                  data-action="addToCart">
+                  Masukkan Keranjang
+                </button>
+              </div>
+            </article>
+            <!-- Obat 2 -->
+            <article class="bg-white rounded-lg shadow-md p-4 flex flex-col" data-id="2">
+              <img alt="Obat Amoxicillin dalam kemasan kapsul merah putih, antibiotik untuk infeksi bakteri"
+                class="rounded-md mb-4 object-cover w-full h-40" height="200"
+                src="https://storage.googleapis.com/a1aa/image/0075fadb-2427-48b0-5b1a-4257692d410a.jpg" width="300" />
+              <h4 class="font-semibold text-lg text-indigo-800 mb-1">
+                Amoxicillin
+              </h4>
+              <p class="text-indigo-700 mb-3 text-sm">
+                Antibiotik untuk mengatasi berbagai infeksi bakteri.
+              </p>
+              <div class="mt-auto flex space-x-3">
+                <button class="flex-1 bg-indigo-600 text-white rounded-md py-2 hover:bg-indigo-700 transition"
+                  data-action="orderNow">
+                  Pesan Sekarang
+                </button>
+                <button
+                  class="flex-1 border border-indigo-600 text-indigo-600 rounded-md py-2 hover:bg-indigo-100 transition"
+                  data-action="addToCart">
+                  Masukkan Keranjang
+                </button>
+              </div>
+            </article>
+            <!-- Obat 3 -->
+            <article class="bg-white rounded-lg shadow-md p-4 flex flex-col" data-id="3">
+              <img alt="Obat Vitamin C dalam kemasan tablet oranye, suplemen untuk meningkatkan daya tahan tubuh"
+                class="rounded-md mb-4 object-cover w-full h-40" height="200"
+                src="https://storage.googleapis.com/a1aa/image/418cda83-8834-4219-9b69-8286a68fc37f.jpg" width="300" />
+              <h4 class="font-semibold text-lg text-indigo-800 mb-1">
+                Vitamin C
+              </h4>
+              <p class="text-indigo-700 mb-3 text-sm">
+                Suplemen untuk meningkatkan daya tahan tubuh dan kesehatan.
+              </p>
+              <div class="mt-auto flex space-x-3">
+                <button class="flex-1 bg-indigo-600 text-white rounded-md py-2 hover:bg-indigo-700 transition"
+                  data-action="orderNow">
+                  Pesan Sekarang
+                </button>
+                <button
+                  class="flex-1 border border-indigo-600 text-indigo-600 rounded-md py-2 hover:bg-indigo-100 transition"
+                  data-action="addToCart">
+                  Masukkan Keranjang
+                </button>
+              </div>
+            </article>
+            <!-- Obat 4 -->
+            <article class="bg-white rounded-lg shadow-md p-4 flex flex-col" data-id="4">
+              <img alt="Botol sirup batuk berwarna merah dengan label obat batuk, kemasan modern"
+                class="rounded-md mb-4 object-cover w-full h-40" height="200"
+                src="https://storage.googleapis.com/a1aa/image/8c8741bc-aa0f-4af4-be4e-ad94a3abeb72.jpg" width="300" />
+              <h4 class="font-semibold text-lg text-indigo-800 mb-1">
+                Cough Syrup
+              </h4>
+              <p class="text-indigo-700 mb-3 text-sm">
+                Obat sirup untuk meredakan batuk dan tenggorokan gatal.
+              </p>
+              <div class="mt-auto flex space-x-3">
+                <button class="flex-1 bg-indigo-600 text-white rounded-md py-2 hover:bg-indigo-700 transition"
+                  data-action="orderNow">
+                  Pesan Sekarang
+                </button>
+                <button
+                  class="flex-1 border border-indigo-600 text-indigo-600 rounded-md py-2 hover:bg-indigo-100 transition"
+                  data-action="addToCart">
+                  Masukkan Keranjang
+                </button>
+              </div>
+            </article>
+            <!-- Obat 5 -->
+            <article class="bg-white rounded-lg shadow-md p-4 flex flex-col" data-id="5">
+              <img alt="Tablet antacid berwarna putih dalam kemasan blister, untuk mengatasi maag dan asam lambung"
+                class="rounded-md mb-4 object-cover w-full h-40" height="200"
+                src="https://storage.googleapis.com/a1aa/image/22feab36-baea-49cc-18f6-977108404ba1.jpg" width="300" />
+              <h4 class="font-semibold text-lg text-indigo-800 mb-1">
+                Antacid Tablet
+              </h4>
+              <p class="text-indigo-700 mb-3 text-sm">
+                Tablet untuk mengatasi maag dan asam lambung berlebih.
+              </p>
+              <div class="mt-auto flex space-x-3">
+                <button class="flex-1 bg-indigo-600 text-white rounded-md py-2 hover:bg-indigo-700 transition"
+                  data-action="orderNow">
+                  Pesan Sekarang
+                </button>
+                <button
+                  class="flex-1 border border-indigo-600 text-indigo-600 rounded-md py-2 hover:bg-indigo-100 transition"
+                  data-action="addToCart">
+                  Masukkan Keranjang
+                </button>
+              </div>
+            </article>
+            <!-- Obat 6 -->
+            <article class="bg-white rounded-lg shadow-md p-4 flex flex-col" data-id="6">
+              <img alt="Obat antihistamin dalam kemasan tablet biru, untuk mengatasi alergi dan gatal-gatal"
+                class="rounded-md mb-4 object-cover w-full h-40" height="200"
+                src="https://storage.googleapis.com/a1aa/image/bc7aadc9-f62f-4a03-cc50-4fae558dafd7.jpg" width="300" />
+              <h4 class="font-semibold text-lg text-indigo-800 mb-1">
+                Antihistamine
+              </h4>
+              <p class="text-indigo-700 mb-3 text-sm">
+                Obat untuk mengatasi alergi dan reaksi gatal-gatal.
+              </p>
+              <div class="mt-auto flex space-x-3">
+                <button class="flex-1 bg-indigo-600 text-white rounded-md py-2 hover:bg-indigo-700 transition"
+                  data-action="orderNow">
+                  Pesan Sekarang
+                </button>
+                <button
+                  class="flex-1 border border-indigo-600 text-indigo-600 rounded-md py-2 hover:bg-indigo-100 transition"
+                  data-action="addToCart">
+                  Masukkan Keranjang
+                </button>
+              </div>
+            </article>
+            <!-- Obat 7 -->
+            <article class="bg-white rounded-lg shadow-md p-4 flex flex-col" data-id="7">
+              <img alt="Obat Ibuprofen dalam kemasan tablet merah muda, obat anti inflamasi dan pereda nyeri"
+                class="rounded-md mb-4 object-cover w-full h-40" height="200"
+                src="https://storage.googleapis.com/a1aa/image/98ade279-1788-48da-17fb-a7e626300920.jpg" width="300" />
+              <h4 class="font-semibold text-lg text-indigo-800 mb-1">
+                Ibuprofen
+              </h4>
+              <p class="text-indigo-700 mb-3 text-sm">
+                Obat anti inflamasi dan pereda nyeri yang efektif.
+              </p>
+              <div class="mt-auto flex space-x-3">
+                <button class="flex-1 bg-indigo-600 text-white rounded-md py-2 hover:bg-indigo-700 transition"
+                  data-action="orderNow">
+                  Pesan Sekarang
+                </button>
+                <button
+                  class="flex-1 border border-indigo-600 text-indigo-600 rounded-md py-2 hover:bg-indigo-100 transition"
+                  data-action="addToCart">
+                  Masukkan Keranjang
+                </button>
+              </div>
+            </article>
+            <!-- Obat 8 -->
+            <article class="bg-white rounded-lg shadow-md p-4 flex flex-col" data-id="8">
+              <img alt="Botol cairan antiseptik berwarna hijau dengan label jelas, untuk membersihkan luka"
+                class="rounded-md mb-4 object-cover w-full h-40" height="200"
+                src="https://storage.googleapis.com/a1aa/image/af80d411-21d1-47fe-ee63-fb3a36adf7f1.jpg" width="300" />
+              <h4 class="font-semibold text-lg text-indigo-800 mb-1">
+                Antiseptic Liquid
+              </h4>
+              <p class="text-indigo-700 mb-3 text-sm">
+                Cairan antiseptik untuk membersihkan dan mencegah infeksi luka.
+              </p>
+              <div class="mt-auto flex space-x-3">
+                <button class="flex-1 bg-indigo-600 text-white rounded-md py-2 hover:bg-indigo-700 transition"
+                  data-action="orderNow">
+                  Pesan Sekarang
+                </button>
+                <button
+                  class="flex-1 border border-indigo-600 text-indigo-600 rounded-md py-2 hover:bg-indigo-100 transition"
+                  data-action="addToCart">
+                  Masukkan Keranjang
+                </button>
+              </div>
+            </article>
+            <!-- Obat 9 -->
+            <article class="bg-white rounded-lg shadow-md p-4 flex flex-col" data-id="9">
+              <img alt="Obat antidiarrheal dalam kemasan tablet putih, untuk mengatasi diare"
+                class="rounded-md mb-4 object-cover w-full h-40" height="200"
+                src="https://storage.googleapis.com/a1aa/image/f7156194-1e38-467a-d899-65da3b75c869.jpg" width="300" />
+              <h4 class="font-semibold text-lg text-indigo-800 mb-1">
+                Antidiarrheal
+              </h4>
+              <p class="text-indigo-700 mb-3 text-sm">
+                Obat untuk mengatasi diare dan gangguan pencernaan.
+              </p>
+              <div class="mt-auto flex space-x-3">
+                <button class="flex-1 bg-indigo-600 text-white rounded-md py-2 hover:bg-indigo-700 transition"
+                  data-action="orderNow">
+                  Pesan Sekarang
+                </button>
+                <button
+                  class="flex-1 border border-indigo-600 text-indigo-600 rounded-md py-2 hover:bg-indigo-100 transition"
+                  data-action="addToCart">
+                  Masukkan Keranjang
+                </button>
+              </div>
+            </article>
+            <!-- Obat 10 -->
+            <article class="bg-white rounded-lg shadow-md p-4 flex flex-col" data-id="10">
+              <img alt="Kemasan krim antifungal berwarna putih dengan tutup biru, untuk mengatasi infeksi jamur kulit"
+                class="rounded-md mb-4 object-cover w-full h-40" height="200"
+                src="https://storage.googleapis.com/a1aa/image/e734dab3-98ba-4ff3-ee91-7b9811c0f51c.jpg" width="300" />
+              <h4 class="font-semibold text-lg text-indigo-800 mb-1">
+                Antifungal Cream
+              </h4>
+              <p class="text-indigo-700 mb-3 text-sm">
+                Krim untuk mengatasi infeksi jamur pada kulit.
+              </p>
+              <div class="mt-auto flex space-x-3">
+                <button class="flex-1 bg-indigo-600 text-white rounded-md py-2 hover:bg-indigo-700 transition"
+                  data-action="orderNow">
+                  Pesan Sekarang
+                </button>
+                <button
+                  class="flex-1 border border-indigo-600 text-indigo-600 rounded-md py-2 hover:bg-indigo-100 transition"
+                  data-action="addToCart">
+                  Masukkan Keranjang
+                </button>
+              </div>
+            </article>
+            <!-- Obat 11 -->
+            <article class="bg-white rounded-lg shadow-md p-4 flex flex-col" data-id="11">
+              <img alt="Botol tetes mata berwarna bening dengan label biru, untuk mengatasi mata kering dan iritasi"
+                class="rounded-md mb-4 object-cover w-full h-40" height="200"
+                src="https://storage.googleapis.com/a1aa/image/0bddaf89-77bd-4101-e1c5-f4ea7a1d29fc.jpg" width="300" />
+              <h4 class="font-semibold text-lg text-indigo-800 mb-1">
+                Eye Drops
+              </h4>
+              <p class="text-indigo-700 mb-3 text-sm">
+                Tetes mata untuk mengatasi mata kering dan iritasi.
+              </p>
+              <div class="mt-auto flex space-x-3">
+                <button class="flex-1 bg-indigo-600 text-white rounded-md py-2 hover:bg-indigo-700 transition"
+                  data-action="orderNow">
+                  Pesan Sekarang
+                </button>
+                <button
+                  class="flex-1 border border-indigo-600 text-indigo-600 rounded-md py-2 hover:bg-indigo-100 transition"
+                  data-action="addToCart">
+                  Masukkan Keranjang
+                </button>
+              </div>
+            </article>
+            <!-- Obat 12 -->
+            <article class="bg-white rounded-lg shadow-md p-4 flex flex-col" data-id="12">
+              <img alt="Botol cairan antacid berwarna putih dengan label hijau, untuk mengatasi asam lambung"
+                class="rounded-md mb-4 object-cover w-full h-40" height="200"
+                src="https://storage.googleapis.com/a1aa/image/5becd4b4-b910-4d21-84a3-159d8438423a.jpg" width="300" />
+              <h4 class="font-semibold text-lg text-indigo-800 mb-1">
+                Antacid Liquid
+              </h4>
+              <p class="text-indigo-700 mb-3 text-sm">
+                Cairan untuk mengatasi asam lambung dan maag.
+              </p>
+              <div class="mt-auto flex space-x-3">
+                <button class="flex-1 bg-indigo-600 text-white rounded-md py-2 hover:bg-indigo-700 transition"
+                  data-action="orderNow">
+                  Pesan Sekarang
+                </button>
+                <button
+                  class="flex-1 border border-indigo-600 text-indigo-600 rounded-md py-2 hover:bg-indigo-100 transition"
+                  data-action="addToCart">
+                  Masukkan Keranjang
+                </button>
+              </div>
+            </article>
+            <!-- Obat 13 -->
+            <article class="bg-white rounded-lg shadow-md p-4 flex flex-col" data-id="13">
+              <img alt="Tablet antipyretic berwarna putih dalam kemasan blister, untuk menurunkan demam"
+                class="rounded-md mb-4 object-cover w-full h-40" height="200"
+                src="https://storage.googleapis.com/a1aa/image/1ea76922-9ef9-4f1e-8a8e-950766161893.jpg" width="300" />
+              <h4 class="font-semibold text-lg text-indigo-800 mb-1">
+                Antipyretic Tablet
+              </h4>
+              <p class="text-indigo-700 mb-3 text-sm">
+                Tablet untuk menurunkan demam dengan cepat.
+              </p>
+              <div class="mt-auto flex space-x-3">
+                <button class="flex-1 bg-indigo-600 text-white rounded-md py-2 hover:bg-indigo-700 transition"
+                  data-action="orderNow">
+                  Pesan Sekarang
+                </button>
+                <button
+                  class="flex-1 border border-indigo-600 text-indigo-600 rounded-md py-2 hover:bg-indigo-100 transition"
+                  data-action="addToCart">
+                  Masukkan Keranjang
+                </button>
+              </div>
+            </article>
+            <!-- Obat 14 -->
+            <article class="bg-white rounded-lg shadow-md p-4 flex flex-col" data-id="14">
+              <img
+                alt="Botol semprot antiseptik berwarna bening dengan label hijau, untuk membersihkan luka dan permukaan"
+                class="rounded-md mb-4 object-cover w-full h-40" height="200"
+                src="https://storage.googleapis.com/a1aa/image/db4c6890-24c8-4d5d-4ce9-f954f009eefe.jpg" width="300" />
+              <h4 class="font-semibold text-lg text-indigo-800 mb-1">
+                Antiseptic Spray
+              </h4>
+              <p class="text-indigo-700 mb-3 text-sm">
+                Semprot antiseptik untuk membersihkan luka dan permukaan.
+              </p>
+              <div class="mt-auto flex space-x-3">
+                <button class="flex-1 bg-indigo-600 text-white rounded-md py-2 hover:bg-indigo-700 transition"
+                  data-action="orderNow">
+                  Pesan Sekarang
+                </button>
+                <button
+                  class="flex-1 border border-indigo-600 text-indigo-600 rounded-md py-2 hover:bg-indigo-100 transition"
+                  data-action="addToCart">
+                  Masukkan Keranjang
+                </button>
+              </div>
+            </article>
+            <!-- Obat 15 -->
+            <article class="bg-white rounded-lg shadow-md p-4 flex flex-col" data-id="15">
+              <img alt="Tablet multivitamin berwarna-warni dalam kemasan blister, suplemen untuk kesehatan umum"
+                class="rounded-md mb-4 object-cover w-full h-40" height="200"
+                src="https://storage.googleapis.com/a1aa/image/9cd8503e-79f3-4b52-9acc-30edb18aee59.jpg" width="300" />
+              <h4 class="font-semibold text-lg text-indigo-800 mb-1">
+                Multivitamin
+              </h4>
+              <p class="text-indigo-700 mb-3 text-sm">
+                Suplemen multivitamin untuk mendukung kesehatan tubuh secara umum.
+              </p>
+              <div class="mt-auto flex space-x-3">
+                <button class="flex-1 bg-indigo-600 text-white rounded-md py-2 hover:bg-indigo-700 transition"
+                  data-action="orderNow">
+                  Pesan Sekarang
+                </button>
+                <button
+                  class="flex-1 border border-indigo-600 text-indigo-600 rounded-md py-2 hover:bg-indigo-100 transition"
+                  data-action="addToCart">
+                  Masukkan Keranjang
+                </button>
+              </div>
+            </article>
+          </div>
+        </section>
+        <!-- Kontak Saya -->
+        <section class="hidden max-w-3xl mx-auto space-y-6" id="pageContact">
+          <h3 class="text-3xl font-bold text-indigo-700 mb-4">
+            Kontak Saya
+          </h3>
+          <p class="text-indigo-900">
+            Jika Anda memiliki pertanyaan atau ingin menghubungi kami, silakan gunakan informasi berikut:
+          </p>
+          <ul class="space-y-3 text-indigo-800 text-lg">
+            <li>
+              <i class="fas fa-phone-alt mr-3 text-indigo-600">
+              </i>
+              Telepon:
+              <a class="text-indigo-700 hover:underline" href="tel:+6281234567890">
+                +62 812-3456-7890
+              </a>
+            </li>
+            <li>
+              <i class="fas fa-envelope mr-3 text-indigo-600">
+              </i>
+              Email:
+              <a class="text-indigo-700 hover:underline" href="mailto:info@neolovepharmacy.com">
+                info@neolovepharmacy.com
+              </a>
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt mr-3 text-indigo-600">
+              </i>
+              Alamat: Jl. Sehat No. 123, Jakarta, Indonesia
+            </li>
+          </ul>
+          <img alt="Peta lokasi Neo Love Pharmacy di Jakarta dengan tanda lokasi berwarna merah"
+            class="rounded-lg shadow-lg w-full object-cover" height="400"
+            src="https://storage.googleapis.com/a1aa/image/f7716493-b955-46e0-f82b-e54e13ceb454.jpg" width="800" />
+        </section>
+        <!-- Keranjang -->
+        <section class="hidden max-w-4xl mx-auto space-y-6" id="pageCart">
+          <h3 class="text-3xl font-bold text-indigo-700 mb-4 flex items-center justify-between">
+            Keranjang Belanja
+            <button
+              class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition flex items-center space-x-2"
+              id="btnAddMore">
+              <i class="fas fa-plus">
+              </i>
+              <span>
+                Pesan Obat Lain
+              </span>
+            </button>
+          </h3>
+          <div class="space-y-4" id="cartItems">
+            <p class="text-indigo-700">
+              Keranjang Anda kosong.
+            </p>
+          </div>
+        </section>
+        <!-- Form Registrasi Pembayaran & Ekspedisi -->
+        <section class="hidden max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8 space-y-6" id="pageOrder">
+          <h3 class="text-3xl font-bold text-indigo-700 mb-4">
+            Form Registrasi Pembayaran &amp; Ekspedisi
+          </h3>
+          <form class="space-y-6" id="orderForm">
+            <fieldset class="space-y-2">
+              <legend class="text-indigo-800 font-semibold text-lg">
+                Data Pemesan
+              </legend>
+              <input
+                class="w-full border border-indigo-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                id="customerName" name="customerName" placeholder="Nama Lengkap" required="" type="text" />
+              <input
+                class="w-full border border-indigo-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                id="customerPhone" name="customerPhone" pattern="[0-9+ ]+" placeholder="Nomor Telepon" required=""
+                type="tel" />
+              <input
+                class="w-full border border-indigo-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                id="customerEmail" name="customerEmail" placeholder="Email" required="" type="email" />
+              <textarea
+                class="w-full border border-indigo-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"
+                id="customerAddress" name="customerAddress" placeholder="Alamat Lengkap Pengiriman" required=""
+                rows="3"></textarea>
+            </fieldset>
+            <fieldset class="space-y-2">
+              <legend class="text-indigo-800 font-semibold text-lg">
+                Metode Pembayaran
+              </legend>
+              <select
+                class="w-full border border-indigo-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                id="paymentMethod" name="paymentMethod" required="">
+                <option disabled="" selected="" value="">
+                  Pilih Metode Pembayaran
+                </option>
+                <option value="transfer">
+                  Transfer Bank
+                </option>
+                <option value="cod">
+                  Cash on Delivery (COD)
+                </option>
+                <option value="e-wallet">
+                  E-Wallet
+                </option>
+              </select>
+            </fieldset>
+            <fieldset class="space-y-2">
+              <legend class="text-indigo-800 font-semibold text-lg">
+                Ekspedisi Pengiriman
+              </legend>
+              <select
+                class="w-full border border-indigo-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                id="shippingMethod" name="shippingMethod" required="">
+                <option disabled="" selected="" value="">
+                  Pilih Ekspedisi
+                </option>
+                <option value="jne">
+                  JNE
+                </option>
+                <option value="tiki">
+                  TIKI
+                </option>
+                <option value="pos">
+                  POS Indonesia
+                </option>
+                <option value="gojek">
+                  Gojek
+                </option>
+                <option value="grab">
+                  Grab
+                </option>
+              </select>
+            </fieldset>
+            <button class="w-full bg-pink-400 text-white font-semibold py-3 rounded-md hover:bg-pink-500 transition"
+              type="submit">
+              Konfirmasi Pesanan
+            </button>
+          </form>
+        </section>
+        <!-- Resi Pesanan -->
+        <section
+          class="hidden max-w-3xl mx-auto rounded-lg shadow-lg p-8 text-gray-900 space-y-6 bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50"
+          id="pageReceipt">
+          <h3 class="text-3xl font-bold mb-4 text-center text-indigo-700 drop-shadow-md">
+            Resi Pesanan Anda
+          </h3>
+          <div class="bg-white rounded-lg p-6 space-y-6 shadow-md" id="receiptContent">
+            <!-- Isi resi akan diisi secara dinamis -->
+          </div>
+          <div class="flex justify-center">
+            <button
+              class="bg-indigo-600 text-white font-semibold px-6 py-3 rounded-md hover:bg-indigo-700 transition flex items-center space-x-2"
+              id="btnDownloadPdf">
+              <i class="fas fa-file-pdf text-pink-400"></i>
+              <span>
+                Download PDF
+              </span>
+            </button>
+          </div>
+          <div class="flex justify-center">
+            <button
+              class="mt-4 bg-indigo-700 bg-opacity-80 hover:bg-opacity-100 text-white font-semibold px-6 py-3 rounded-md transition"
+              id="btnBackToHome">
+              Kembali ke Beranda
+            </button>
+          </div>
+        </section>
+      </main>
+    </section>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    (() => {
+      const landing = document.getElementById('landing');
+      const dashboard = document.getElementById('dashboard');
+
+      const navHome = document.getElementById('navHome');
+      const navMedicines = document.getElementById('navMedicines');
+      const navContact = document.getElementById('navContact');
+      const navCart = document.getElementById('navCart');
+
+      const pageHome = document.getElementById('pageHome');
+      const pageMedicines = document.getElementById('pageMedicines');
+      const pageContact = document.getElementById('pageContact');
+      const pageCart = document.getElementById('pageCart');
+      const pageOrder = document.getElementById('pageOrder');
+      const pageReceipt = document.getElementById('pageReceipt');
+
+      const btnShopNow = document.getElementById('btnShopNow');
+      const cartCount = document.getElementById('cartCount');
+      const cartItemsContainer = document.getElementById('cartItems');
+      const btnAddMore = document.getElementById('btnAddMore');
+      const orderForm = document.getElementById('orderForm');
+      const receiptContent = document.getElementById('receiptContent');
+      const btnDownloadPdf = document.getElementById('btnDownloadPdf');
+      const btnBackToHome = document.getElementById('btnBackToHome');
+
+      // Obat data (ambil dari elemen obat di halaman)
+      const medicines = Array.from(document.querySelectorAll('#medicinesList article')).map((article) => {
+        return {
+          id: article.dataset.id,
+          name: article.querySelector('h4').textContent,
+          description: article.querySelector('p').textContent,
+          imgSrc: article.querySelector('img').src,
+          imgAlt: article.querySelector('img').alt,
+        };
+      });
+
+      // Keranjang belanja (array obat dengan qty)
+      let cart = [];
+
+      // Fungsi update tampilan jumlah keranjang
+      function updateCartCount() {
+        cartCount.textContent = cart.reduce((acc, item) => acc + item.qty, 0);
+      }
+
+      // Fungsi render isi keranjang
+      function renderCart() {
+        cartItemsContainer.innerHTML = '';
+        if (cart.length === 0) {
+          cartItemsContainer.innerHTML = '<p class="text-indigo-700">Keranjang Anda kosong.</p>';
+          return;
+        }
+        cart.forEach((item, idx) => {
+          const med = medicines.find((m) => m.id === item.id);
+          const div = document.createElement('div');
+          div.className = 'flex items-center bg-white rounded-lg shadow p-4 space-x-4';
+          div.innerHTML = `
+            <img src="${med.imgSrc}" alt="${med.imgAlt}" class="w-20 h-16 object-cover rounded-md flex-shrink-0" />
+            <div class="flex-grow">
+              <h4 class="font-semibold text-indigo-800">${med.name}</h4>
+              <p class="text-indigo-700 text-sm">${med.description}</p>
+              <p class="text-indigo-700 text-sm mt-1">Jumlah: ${item.qty}</p>
+            </div>
+            <button aria-label="Hapus obat dari keranjang" data-idx="${idx}" class="text-pink-600 hover:text-pink-800 focus:outline-none focus:ring-2 focus:ring-pink-500 rounded">
+              <i class="fas fa-trash-alt text-xl"></i>
+            </button>
+          `;
+          cartItemsContainer.appendChild(div);
+        });
+
+        // Tambah tombol Pesan Sekarang di bawah daftar
+        const btnOrderNow = document.createElement('button');
+        btnOrderNow.textContent = 'Pesan Sekarang';
+        btnOrderNow.className =
+          'mt-6 w-full bg-indigo-600 text-white font-semibold py-3 rounded-md hover:bg-indigo-700 transition';
+        btnOrderNow.addEventListener('click', () => {
+          if (cart.length === 0) {
+            alert('Keranjang kosong, silakan tambahkan obat terlebih dahulu.');
+            return;
+          }
+          currentOrderItems = cart.map((item) => ({ id: item.id, qty: item.qty }));
+          fillOrderForm();
+          showPage(pageOrder);
+        });
+        cartItemsContainer.appendChild(btnOrderNow);
+      }
+
+      // Navigasi halaman dashboard
+      function showPage(page) {
+        [pageHome, pageMedicines, pageContact, pageCart, pageOrder, pageReceipt].forEach((p) => {
+          p.classList.add('hidden');
+        });
+        page.classList.remove('hidden');
+      }
+
+      // Event tombol Belanja Sekarang di landing page
+      btnShopNow.addEventListener('click', () => {
+        landing.classList.add('hidden');
+        dashboard.classList.remove('hidden');
+        showPage(pageHome);
+      });
+
+      // Event navigasi dashboard
+      navHome.addEventListener('click', () => {
+        showPage(pageHome);
+      });
+      navMedicines.addEventListener('click', () => {
+        showPage(pageMedicines);
+      });
+      navContact.addEventListener('click', () => {
+        showPage(pageContact);
+      });
+      navCart.addEventListener('click', () => {
+        renderCart();
+        showPage(pageCart);
+      });
+
+      // Event tombol Pesan Sekarang dan Masukkan Keranjang di daftar obat
+      document.getElementById('medicinesList').addEventListener('click', (e) => {
+        const btn = e.target.closest('button');
+        if (!btn) return;
+        const article = btn.closest('article');
+        if (!article) return;
+        const medId = article.dataset.id;
+        if (btn.dataset.action === 'orderNow') {
+          // Langsung ke form order dengan obat ini
+          currentOrderItems = [{ id: medId, qty: 1 }];
+          fillOrderForm();
+          showPage(pageOrder);
+        } else if (btn.dataset.action === 'addToCart') {
+          addToCart(medId, 1);
+          alert('Obat berhasil dimasukkan ke keranjang.');
+          updateCartCount();
+        }
+      });
+
+      // Fungsi tambah ke keranjang
+      function addToCart(id, qty) {
+        const existing = cart.find((item) => item.id === id);
+        if (existing) {
+          existing.qty += qty;
+        } else {
+          cart.push({ id, qty });
+        }
+        updateCartCount();
+      }
+
+      // Event tombol hapus obat di keranjang
+      cartItemsContainer.addEventListener('click', (e) => {
+        const btn = e.target.closest('button');
+        if (!btn) return;
+        const idx = btn.dataset.idx;
+        if (idx !== undefined) {
+          cart.splice(idx, 1);
+          renderCart();
+          updateCartCount();
+        }
+      });
+
+      // Event tombol Pesan Obat Lain di keranjang
+      btnAddMore.addEventListener('click', () => {
+        showPage(pageMedicines);
+      });
+
+      // Variabel untuk menyimpan obat yang sedang dipesan di form order
+      let currentOrderItems = [];
+
+      // Fungsi isi form order dengan data obat yang dipesan
+      function fillOrderForm() {
+        // Kosongkan form dulu
+        orderForm.reset();
+      }
+
+      // Event submit form order
+      orderForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (currentOrderItems.length === 0) {
+          alert('Tidak ada obat yang dipesan.');
+          return;
+        }
+        // Ambil data form
+        const formData = new FormData(orderForm);
+        const customerName = formData.get('customerName').trim();
+        const customerPhone = formData.get('customerPhone').trim();
+        const customerEmail = formData.get('customerEmail').trim();
+        const customerAddress = formData.get('customerAddress').trim();
+        const paymentMethod = formData.get('paymentMethod');
+        const shippingMethod = formData.get('shippingMethod');
+
+        if (
+          !customerName ||
+          !customerPhone ||
+          !customerEmail ||
+          !customerAddress ||
+          !paymentMethod ||
+          !shippingMethod
+        ) {
+          alert('Mohon lengkapi semua data.');
+          return;
+        }
+
+        // Buat data resi
+        const receiptData = {
+          customerName,
+          customerPhone,
+          customerEmail,
+          customerAddress,
+          paymentMethod,
+          shippingMethod,
+          items: currentOrderItems.map((item) => {
+            const med = medicines.find((m) => m.id === item.id);
+            return {
+              name: med.name,
+              qty: item.qty,
+            };
+          }),
+          orderDate: new Date().toLocaleString('id-ID', {
+            day: '2-digit',
+            month: 'long',
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+          }),
+          receiptNumber: 'NL-' + Math.floor(Math.random() * 1000000).toString().padStart(6, '0'),
+        };
+
+        renderReceipt(receiptData);
+        showPage(pageReceipt);
+      });
+
+      // Fungsi render resi pesanan
+      function renderReceipt(data) {
+        receiptContent.innerHTML = `
+          <div class="space-y-2">
+            <p><strong>Nomor Resi:</strong> ${data.receiptNumber}</p>
+            <p><strong>Tanggal Pesan:</strong> ${data.orderDate}</p>
+          </div>
+          <div class="border-t border-gray-300 pt-4 space-y-2">
+            <h4 class="font-semibold text-lg text-indigo-700">Data Pemesan:</h4>
+            <p>Nama: ${data.customerName}</p>
+            <p>Telepon: ${data.customerPhone}</p>
+            <p>Email: ${data.customerEmail}</p>
+            <p>Alamat: ${data.customerAddress}</p>
+          </div>
+          <div class="border-t border-gray-300 pt-4 space-y-2">
+            <h4 class="font-semibold text-lg text-indigo-700">Metode Pembayaran:</h4>
+            <p>${capitalize(data.paymentMethod)}</p>
+          </div>
+          <div class="border-t border-gray-300 pt-4 space-y-2">
+            <h4 class="font-semibold text-lg text-indigo-700">Ekspedisi Pengiriman:</h4>
+            <p>${capitalize(data.shippingMethod)}</p>
+          </div>
+          <div class="border-t border-gray-300 pt-4 space-y-2">
+            <h4 class="font-semibold text-lg text-indigo-700">Daftar Obat:</h4>
+            <ul class="list-disc list-inside space-y-1">
+              ${data.items
+            .map(
+              (item) =>
+                `<li>${item.name} - Jumlah: ${item.qty}</li>`
+            )
+            .join('')}
+            </ul>
+          </div>
+        `;
+      }
+
+      // Fungsi kapitalisasi kata pertama
+      function capitalize(str) {
+        if (!str) return '';
+        return str.charAt(0).toUpperCase() + str.slice(1);
+      }
+
+      // Event tombol Download PDF
+      btnDownloadPdf.addEventListener('click', () => {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+
+        // Soft pastel colors
+        const headerBgColor = [238, 224, 255]; // light lavender
+        const headerTextColor = [88, 50, 139]; // soft indigo
+        const sectionTitleColor = [102, 51, 153]; // medium purple
+        const textColor = [51, 51, 51]; // dark gray
+        const borderColor = [204, 204, 204]; // light gray
+
+        // Draw header background rectangle
+        doc.setFillColor(...headerBgColor);
+        doc.rect(0, 0, 210, 40, 'F');
+
+        // Title
+        doc.setFontSize(22);
+        doc.setTextColor(...headerTextColor);
+        doc.setFont('helvetica', 'bold');
+        doc.text('Resi Pesanan Neo Love Pharmacy', 105, 27, { align: 'center' });
+
+        // Start content below title
+        let y = 50;
+        const lineHeight = 8;
+        const leftMargin = 14;
+        const maxWidth = 182;
+
+        // Helper to add section title with underline
+        function addSectionTitle(title) {
+          doc.setFontSize(14);
+          doc.setTextColor(...sectionTitleColor);
+          doc.setFont('helvetica', 'bold');
+          doc.text(title, leftMargin, y);
+          y += 3;
+          // underline
+          doc.setDrawColor(...borderColor);
+          doc.setLineWidth(0.8);
+          doc.line(leftMargin, y, leftMargin + maxWidth, y);
+          y += lineHeight - 3;
+        }
+
+        // Helper to add normal text with wrapping
+        function addText(text) {
+          doc.setFontSize(12);
+          doc.setTextColor(...textColor);
+          doc.setFont('helvetica', 'normal');
+          const splitText = doc.splitTextToSize(text, maxWidth);
+          doc.text(splitText, leftMargin, y);
+          y += splitText.length * lineHeight;
+        }
+
+        // Helper to add bullet list items
+        function addList(items) {
+          doc.setFontSize(12);
+          doc.setTextColor(...textColor);
+          doc.setFont('helvetica', 'normal');
+          items.forEach(item => {
+            const bullet = '\u2022 ';
+            const splitText = doc.splitTextToSize(bullet + item, maxWidth);
+            doc.text(splitText, leftMargin + 4, y);
+            y += splitText.length * lineHeight;
+          });
+        }
+
+        // Add Receipt Number and Date
+        addSectionTitle('Nomor Resi & Tanggal Pesan');
+        addText(`Nomor Resi: ${receiptContent.querySelector('div:nth-child(1) p:nth-child(1)').textContent.split(':')[1].trim()}`);
+        addText(`Tanggal Pesan: ${receiptContent.querySelector('div:nth-child(1) p:nth-child(2)').textContent.split(':')[1].trim()}`);
+
+        y += 6;
+
+        // Add Customer Data
+        addSectionTitle('Data Pemesan');
+        addText(`Nama: ${receiptContent.querySelector('div:nth-child(2) p:nth-child(1)').textContent.split(':')[1].trim()}`);
+        addText(`Telepon: ${receiptContent.querySelector('div:nth-child(2) p:nth-child(2)').textContent.split(':')[1].trim()}`);
+        addText(`Email: ${receiptContent.querySelector('div:nth-child(2) p:nth-child(3)').textContent.split(':')[1].trim()}`);
+        addText(`Alamat: ${receiptContent.querySelector('div:nth-child(2) p:nth-child(4)').textContent.split(':')[1].trim()}`);
+
+        y += 6;
+
+        // Add Payment Method
+        addSectionTitle('Metode Pembayaran');
+        addText(receiptContent.querySelector('div:nth-child(3) p').textContent);
+
+        y += 6;
+
+        // Add Shipping Method
+        addSectionTitle('Ekspedisi Pengiriman');
+        addText(receiptContent.querySelector('div:nth-child(4) p').textContent);
+
+        y += 6;
+
+        // Add Items List
+        addSectionTitle('Daftar Obat');
+        const items = Array.from(receiptContent.querySelectorAll('div:nth-child(5) ul li')).map(li => li.textContent);
+        addList(items);
+
+        // Footer line
+        y = 280;
+        doc.setDrawColor(...borderColor);
+        doc.setLineWidth(0.5);
+        doc.line(leftMargin, y, leftMargin + maxWidth, y);
+        y += 8;
+
+        // Footer text
+        doc.setFontSize(10);
+        doc.setTextColor(120, 120, 120);
+        doc.setFont('helvetica', 'italic');
+        doc.text('Terima kasih telah berbelanja di Neo Love Pharmacy.', 105, y, { align: 'center' });
+
+        doc.save('resi-pesanan-neolovepharmacy.pdf');
+      });
+
+      // Tombol kembali ke beranda dari resi
+      btnBackToHome.addEventListener('click', () => {
+        currentOrderItems = [];
+        cart = [];
+        updateCartCount();
+        landing.classList.remove('hidden');
+        dashboard.classList.add('hidden');
+        showPage(pageHome);
+      });
+
+      // Inisialisasi
+      updateCartCount();
+    })();
+  </script>
+</body>
+
+</html>
